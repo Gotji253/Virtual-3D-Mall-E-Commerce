@@ -2,20 +2,37 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-center">
-      <div className="text-5xl mb-4">🏬</div>
-      <h1 className="text-4xl sm:text-5xl font-bold mb-3 tracking-tight">Virtual 3D Mall</h1>
-      <p className="text-slate-300 text-lg mb-10 max-w-md">
-        เดินชมห้างสรรพสินค้าเสมือนจริงในโลก 3 มิติ<br />
-        เลือกซื้อสินค้าได้ทันที
-      </p>
-      <div className="flex flex-col sm:flex-row gap-3 w-full max-w-xs">
-        <Link href="/mall" className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 rounded-xl font-semibold text-center transition">
-          เข้าชมห้าง 3D
-        </Link>
-        <Link href="/dashboard" className="px-6 py-3.5 bg-slate-700 hover:bg-slate-600 rounded-xl font-semibold text-center transition">
-          ร้านค้า (Merchant)
-        </Link>
+    <main className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+      {/* background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-500/10 via-transparent to-transparent" />
+
+      <div className="relative z-10 text-center max-w-lg">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-sky-500/10 border border-sky-400/20 mb-6 text-3xl">
+          🏬
+        </div>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-3">
+          Virtual 3D Mall
+        </h1>
+        <p className="text-slate-400 text-base sm:text-lg mb-10 leading-relaxed">
+          เดินชมห้างสรรพสินค้าเสมือนจริงในโลก 3 มิติ
+          <br />
+          สัมผัสสินค้า เลือกซื้อได้ทันที
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link
+            href="/mall"
+            className="px-7 py-3.5 bg-sky-500 hover:bg-sky-400 text-white rounded-xl font-semibold text-center transition shadow-lg shadow-sky-500/25"
+          >
+            เข้าชมห้าง 3D
+          </Link>
+          <Link
+            href="/dashboard"
+            className="px-7 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-xl font-semibold text-center transition"
+          >
+            ร้านค้า (Merchant)
+          </Link>
+        </div>
       </div>
     </main>
   );
